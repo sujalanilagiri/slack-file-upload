@@ -37,7 +37,7 @@ export class Main extends Component {
     this.props.postChannel(val);
     this.forceUpdate();
 
-    if (this.props.response == 200) this.popoutClosed();
+    if (this.props.response === 200) this.popoutClosed();
   }
 
   channelSelected(value) {
@@ -57,7 +57,7 @@ export class Main extends Component {
         </Button>
 
         {this.props.popout && (
-          <Modal open={this.props.popout}>
+          <Modal open={this.props.popout} onClose={() => {}}>
             <div className="Share-video-clip">Share Video Clips</div>
             <div>
               <SlackWindow

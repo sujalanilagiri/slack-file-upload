@@ -19,9 +19,6 @@ export class SlackWindow extends Component {
 
   render() {
     const { data, handleClick } = this.props;
-    const btn_class = this.state.selectedChannel
-      ? "EnabledButton"
-      : "DisbaledButton";
     return (
       <div className="Rectangle-20">
         <div>
@@ -45,7 +42,7 @@ export class SlackWindow extends Component {
               {data
                 ? data.map((channel, index) => {
                     return (
-                      <option value={channel} key={channel}>
+                      <option value={channel} key={channel + index}>
                         {String(channel.name)}
                       </option>
                     );
